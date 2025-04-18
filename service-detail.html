@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Detail</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, #4a42b5, #3ad5b9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            background: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: #3ad5b9;
+                border: none;
+                padding: 10px;
+                margin-left: auto;
+            }
+
+            .navbar a {
+                text-align: center;
+                width: 100%;
+                padding: 12px;
+            }
+        }
+
+        /* Service Detail Styles */
+        .service-detail {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .service-detail h2 {
+            margin-bottom: 20px;
+            color: #4a42b5;
+        }
+
+        .service-detail p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-detail ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .service-detail ul li {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-detail ul li i {
+            margin-right: 10px;
+            color: #4a42b5;
+        }
+
+        /* Icons */
+        .icon {
+            color: #4a42b5;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #4a42b5;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>My Portfolio</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <div class="navbar-links">
+            <a href="home.html">Home</a>
+            <a href="home.html#about">About</a>
+            <a href="home.html#services">Services</a>
+            <a href="home.html#skills">Skills</a>
+            <a href="home.html#projects">Projects</a>
+            <a href="home.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Service Detail Content -->
+    <div class="service-detail" id="service-detail">
+        <h2 id="service-title"></h2>
+        <p id="service-description"></p>
+        <ul id="service-features"></ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Get the URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const serviceType = params.get('service');
+
+        // Define service details
+        const serviceDetails = {
+            'mobile-app': {
+                title: 'Mobile Application Developer',
+                description: 'As a mobile application developer, I specialize in creating Android applications, ensuring functionality, design, and performance.',
+                features: [
+                    'Developing apps using Java ',
+                    'Ensuring smooth UI/UX across devices',
+                    'Integrating third-party APIs and services',
+                    'App maintenance and updates'
+                ]
+            },
+            'web-dev': {
+                title: 'Web Developer',
+                description: 'As a Web Developer, I focus on building responsive, accessible websites and web applications optimized for performance and cross-browser compatibility.',
+                features: [
+                    'Developing responsive layouts with HTML/CSS',
+                    'Creating interactive features with JavaScript',
+                    'Cross-browser compatibility testing',
+                    'Search Engine Optimization (SEO) best practices'
+                ]
+            },
+            'software-dev': {
+                title: 'Software Developer',
+                description: 'As a software developer, I offer comprehensive solutions across multiple platforms, including desktop applications and more complex software systems.',
+                features: [
+                    'Building multi-platform software solutions',
+                    'Proficient in C++, Python, and Java',
+                    'Testing and debugging complex systems',
+                    'Continuous software updates and maintenance'
+                ]
+            }
+        };
+
+        // Load content based on the service type
+        const serviceTitle = document.getElementById('service-title');
+        const serviceDescription = document.getElementById('service-description');
+        const serviceFeatures = document.getElementById('service-features');
+
+        if (serviceDetails[serviceType]) {
+            serviceTitle.textContent = serviceDetails[serviceType].title;
+            serviceDescription.textContent = serviceDetails[serviceType].description;
+            serviceDetails[serviceType].features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="icon">&#10003;</i> ${feature}`;
+                serviceFeatures.appendChild(li);
+            });
+        } else {
+            serviceTitle.textContent = 'Service Not Found';
+            serviceDescription.textContent = 'The service you are looking for does not exist.';
+        }
+
+        // Toggle navbar links on mobile
+        function toggleMenu() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
