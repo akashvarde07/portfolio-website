@@ -1,0 +1,644 @@
+  /* Glow Effect */
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(224, 79, 200, 0.7), 0 0 30px rgba(0, 255, 255, 0.7), 0 0 45px rgba(90, 79, 211, 0.7);
+    border: 2px solid rgba(222, 255, 130, 0.7);
+    transition: box-shadow 0.5s, border 0.5s;
+}
+
+/* Button states */
+button.error {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+button.success {
+    background-color: green;
+    color: white;
+    border: none;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #4b7eb1;
+color: #333;
+}
+
+/* Navbar container */
+.navbar {
+    background: linear-gradient(135deg, #4a42b5, #3ad5b9);
+    overflow: hidden;
+    position: fixed;
+    inset-block-start: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar title */
+.navbar h1 {
+    color: #130808;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Keep hidden on larger screens */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: transparent; /* Remove default button background */
+    margin-left: auto; /* Aligns to the right */
+    padding: 10px; /* Add padding for better click area */
+    transition: background-color 0.3s ease;
+    z-index: 1010; /* Ensure it's above other elements */
+}
+
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+/* Navbar items */
+.navbar a {
+    color: rgb(16, 7, 7);
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
+}
+
+/* Navbar links container */
+.navbar-links {
+    display: flex;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #575757;
+    color: #fff;
+}
+
+/* Responsive: Center title and toggle button */
+@media screen and (max-width: 600px) {
+    .menu-toggle {
+        display: block; /* Show on mobile */
+        margin-left: 0; /* Adjust alignment */
+    }
+
+    .navbar h1, .menu-toggle.hidden {
+        display: none; /* Hide title and menu icon when menu is active */
+    }
+
+    .navbar-links {
+        display: none; /* Hide navbar links initially */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+}
+
+/* Full screen container */
+.info-container {
+height: 90vh;
+max-width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+background: linear-gradient(135deg, #5ddfa7, #49ccf0);           
+box-shadow: 0 8px 20px rgba(162, 135, 135, 0.1);
+}
+
+/* Centered Text Information */
+.info-text {
+
+padding: 40px 60px;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+max-width: 800px;
+width: 100%;
+}
+
+.info-text h2 {
+font-size: 42px;
+font-weight: bold;
+color: #090808;
+margin-top: 0;
+}
+
+.info-text p {
+font-size: 22px;
+line-height: 1.8;
+color: #1c1111;
+margin-bottom: 20px;
+}
+
+/* Button styling */
+.info-text .cta-btn {
+display: inline-block;
+margin-top: 20px;
+padding: 16px 32px;
+background-color: #f6f1f1;
+color: #130d0d;
+border: none;
+border-radius: 6px;
+text-decoration: none;
+font-size: 18px;
+transition: background-color 0.3s ease;
+}
+
+.info-text .cta-btn:hover {
+background-color: #72c47e;
+}
+
+/* Social Media Icons */
+.social-media {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+.social-icon {
+color: #e5eaee;
+font-size: 24px;
+transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+color: #548be3;
+}
+
+/* Section styling */
+.section {
+padding: 60px 20px;
+background-color: #fff;
+color: #333;
+}
+
+.section h2 {
+font-size: 36px;
+margin-top: 0;
+margin-bottom: 20px;
+font-weight: bold;
+text-align: center;
+}
+
+.section p {
+font-size: 18px;
+line-height: 1.6;
+margin: 0 auto;
+max-width: 800px;
+text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+.info-text h2 {
+font-size: 32px;
+}
+
+.info-text p {
+font-size: 18px;
+}
+
+.cta-btn {
+width: 50%;
+padding: 12px;
+display: block;
+text-align: center;
+margin: 0 auto; /* Centers the button */
+}
+}
+
+
+/* About section cards */
+.about-cards {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.card {
+background: linear-gradient(135deg, #5ddfa7, #49ccf0);           
+
+padding: 20px;
+
+box-shadow: 0 4px 8px rgba(171, 93, 93, 0.1);
+text-align: center;
+}
+
+.card h3 {
+
+margin-top: 0;
+font-size: 24px;
+}
+
+.card p {
+font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+.about-cards {
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card h3 {
+font-size: 20px;
+}
+
+.card p {
+font-size: 14px;
+}
+}
+
+/* Services section cards */
+/* Ensure the service card takes up equal height */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligns the button at the bottom */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #5ddfa7, #49ccf0);           
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures all cards take up equal height */
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-card p {
+    flex-grow: 1; /* Ensures the paragraph takes up available space */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Explore button styling */
+.explore-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+     
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Aligns the button within the card */
+}
+
+.explore-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Flex container for service cards */
+.services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row, with space between */
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 768px) {
+.services-cards {
+grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.service-card h3 {
+font-size: 20px;
+}
+
+.service-card p {
+font-size: 14px;
+}
+}
+
+/* Projects section */
+/* Projects Section */
+.project-cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.project-card {
+position: relative;
+overflow: hidden;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+width: 100%;
+height: 100%;
+transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+transform: scale(1.1);
+}
+
+.project-overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.7);
+color: #fff;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease;
+padding: 20px;
+text-align: center;
+}
+
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+
+.project-overlay h3 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.project-overlay p {
+font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+.project-cards {
+grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.project-card h3 {
+font-size: 20px;
+}
+
+.project-card p {
+font-size: 14px;
+}
+}
+
+
+/* Contact form */
+.contact-form {
+max-width: 600px;
+margin: 0 auto;
+background-color: #fff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.contact-form button {
+background-color: #333;
+color: #fff;
+border: none;
+padding: 15px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 18px;
+transition: background-color 0.3s ease;
+display: block; /* Ensures the button is treated as a block-level element */
+margin: 20px auto 0; /* Centers the button horizontally and adds top margin */
+width: fit-content; /* Keeps the button's width based on its content */
+}
+
+.contact-form button:hover {
+background-color: #575757;
+}
+
+@media screen and (max-width: 768px) {
+.contact-form {
+padding: 20px; /* Adjusts the padding for smaller screens */
+}
+
+.contact-form input, .contact-form textarea {
+font-size: 16px; /* Increases input and textarea font size for better readability */
+}
+
+.contact-form button {
+width: 100%; /* Makes the button take full width */
+padding: 12px; /* Adjusts the button padding */
+display: block;
+margin: 20px auto 0; /* Centers the button on small screens */
+}
+}
+
+/* Skills Section */
+.skills-section {
+background-color: #f8f9fa;
+padding: 60px 30px;
+color: #333;
+}
+
+.skills-section h2 {
+font-size: 36px;
+margin-top: 0;
+margin-bottom: 30px;
+font-weight: bold;
+text-align: center;
+}
+
+.skills-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.skill-item {
+background: linear-gradient(135deg, #5ddfa7, #49ccf0);           
+padding: 20px;
+
+box-shadow: 0 4px 8px rgba(171, 93, 93, 0.1);
+text-align: center;
+position: relative;
+}
+
+.skill-item h3 {
+margin-top: 0;
+font-size: 24px;
+}
+
+.skill-item p {
+font-size: 16px;
+margin-bottom: 10px; /* Add margin to space out from progress bar */
+}
+
+/* Progress bar styling */
+.skill-progress {
+position: relative;
+height: 10px;
+background-color: #040b0a; /* Default color */
+border-radius: 4px;
+overflow: hidden;
+margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.skill-progress-bar {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 0;
+background-color: #007bff; /* Example color */
+border-radius: 4px;
+transition: width 0.6s ease;
+}
+
+.skill-percent {
+position: absolute;
+top: 100%; /* Place below the progress bar */
+left: 50%; /* Center horizontally within skill-item */
+transform: translateX(-50%); /* Center horizontally within skill-item */
+font-size: 14px;
+color: #333;
+font-weight: bold;
+text-align: center;
+white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+.skill-percent {
+font-size: 12px;
+}
+}
+  /* Glow Effect */
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(224, 79, 200, 0.7), 0 0 30px rgba(0, 255, 255, 0.7), 0 0 45px rgba(90, 79, 211, 0.7);
+    border: 2px solid rgba(177, 204, 104, 0.7);
+    transition: box-shadow 0.5s, border 0.5s;
+}
+
+/* Button states */
+button.error {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+button.success {
+    background-color: green;
+    color: white;
+    border: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.blog-post {
+    background:linear-gradient(135deg, #5ddfa7, #49ccf0);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover {
+    transform: scale(1.02);
+}
+
+.blog-post h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.blog-post .date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.blog-post p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}

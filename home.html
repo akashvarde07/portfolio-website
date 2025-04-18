@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Add Bootstrap JavaScript Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="Design.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+
+
+
+    .skill-item a {
+        text-decoration: none;
+        color: #333;
+        text-align: center;
+    }
+
+    
+
+
+
+
+        /* Glow Effect */
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(224, 79, 200, 0.7), 0 0 30px rgba(0, 255, 255, 0.7), 0 0 45px rgba(90, 79, 211, 0.7);
+            border: 2px solid rgba(177, 204, 104, 0.7);
+            transition: box-shadow 0.5s, border 0.5s;
+        }
+
+        /* Button states */
+        button.error {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        button.success {
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        .footer {
+            text-align: center;
+            margin-block-start: 50px;
+            padding: 20px;
+            background-color: #4a42b5;
+            color: white;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>My Portfolio</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Full Screen Info Container Below Navbar -->
+    <div class="info-container" id="home">
+        <!-- Text Information -->
+        <div class="info-text">
+            <h2>Hello, I'm Akash Varde</h2>
+            <p>I'm a passionate <strong>Mobile Application & Web Developer</strong> dedicated to crafting exceptional
+                digital experiences. From sleek mobile apps to dynamic websites, I turn innovative ideas into reality.
+                Let’s create something amazing together!</p>
+
+            
+
+            <!-- Call to Action Button -->
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="stylesheet" href="Design.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       
+    </head>
+    <body>
+        
+        <section class="blog-container">
+            
+            <article class="blog-post">
+                <h2>My Journey into Web Development</h2>
+                <p class="date">January 10, 2025</p>
+                <p>Web development has been a passion of mine since I started exploring programming. From learning HTML and CSS to mastering JavaScript and frameworks like React, it's been an exciting journey. I enjoy building interactive and dynamic websites that provide great user experiences. My goal is to keep learning and stay updated with the latest trends in web technologies.</p>
+                <a href="#">Read More</a>
+            </article>
+    
+            <article class="blog-post">
+                <h2>Tips for Improving Coding Skills</h2>
+                <p class="date">February 1, 2025</p>
+                <p>Coding is an ever-evolving field, and continuous learning is key. Practice daily, build projects, read documentation, and engage with the developer community to enhance your skills. Additionally, solving algorithmic challenges on platforms like LeetCode and CodeWars can sharpen problem-solving abilities. Collaborating on open-source projects also provides real-world coding experience.</p>
+                <a href="#">Read More</a>
+            </article>
+            
+            <article class="blog-post">
+                <h2>Building My First Full-Stack Project</h2>
+                <p class="date">March 5, 2025</p>
+                <p>Recently, I developed my first full-stack web application using the MERN stack (MongoDB, Express.js, React, and Node.js). The project was a task management system that allowed users to add, edit, and delete tasks. This experience taught me a lot about backend development, API integration, and database management.</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+    </body>
+    </html>
+    </body>
+    
+    </html>
+    
+    <!-- About Section -->
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <br>
+        <div class="about-cards">
+            <div class="card">
+                <h3>Diploma In Computer Technology</h3>
+                <p>Completed Diploma in Computer Technology from Dy patil akurdi.</p>
+            </div>
+            <div class="card">
+                <h3>B-Tech in Information Technology
+                    <br>
+                    <br>
+                </h3>
+                <p>Pursuing B-tech in Information Technology from AISSMS IOIT Pune.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile Application Developer</h3>
+                <p>I'm a skilled Mobile Application Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section" id="services">
+        <h2>My Services</h2>
+        <br>
+        <div class="services-cards">
+            <div class="service-card">
+                <h3>Mobile Application Developer</h3>
+                <p>As a mobile application developer, I have expertise in creating and maintaining apps for platforms like Android.</p>
+                <a href="service-detail.html?service=mobile-app" class="explore-btn">Explore</a>
+            </div>
+            <div class="service-card">
+                <h3>Web Developer</h3>
+                <p>As a Web Developer, my expertise lies in creating websites and web applications that are accessible across different devices and browsers.</p>
+                <a href="service-detail.html?service=web-dev" class="explore-btn">Explore</a>
+            </div>
+            <div class="service-card">
+                <h3>Software Developer</h3>
+                <p>As a software developer, my role expands beyond just mobile apps or websites to encompass a wide range of software solutions.</p>
+                <a href="service-detail.html?service=software-dev" class="explore-btn">Explore</a>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Skills Section -->
+<!-- Include Font Awesome CDN in your HTML <head> -->
+
+<!-- Use the generic code icon instead of the coffee icon -->
+<div class="skills-section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+        <div class="skill-item">
+            
+            <i class="fas fa-coffee"></i>
+            <a href="skill_details.html?skill=java">
+                <h3>
+                    <i class="fas fa-code"></i><br>Java
+                </h3>
+            </a>
+            <div class="skill-progress java-progress" style="inline-size: 80%;"></div>
+        </div>
+        <div class="skill-item">
+            <a href="skill_details.html?skill=htmlcss">
+                <h3>
+                    <i class="fab fa-html5"></i><br>HTML & CSS
+                </h3>
+            </a>
+            <div class="skill-progress html-css-progress" style="inline-size: 90%;"></div>
+        </div>
+        <div class="skill-item">
+            <a href="skill_details.html?skill=javascript">
+                <h3>
+                    <i class="fab fa-js"></i><br>JavaScript
+                </h3>
+            </a>
+            <div class="skill-progress javascript-progress" style="inline-size: 70%;"></div>
+        </div>
+        <div class="skill-item">
+            <a href="skill_details.html?skill=python">
+                <h3>
+                    <i class="fab fa-python"></i><br>Python
+                </h3>
+            </a>
+            <div class="skill-progress python-progress" style="inline-size: 70%;"></div>
+        </div>
+        <div class="skill-item">
+            <a href="skill_details.html?skill=cpp">
+                <h3>
+                    <i class="fas fa-code"></i><br>C++
+                </h3>
+            </a>
+            <div class="skill-progress cpp-progress" style="inline-size: 75%;"></div>
+        </div>
+        <div class="skill-item">
+            <a href="skill_details.html?skill=db_management">
+                <h3>
+                    <i class="fas fa-database"></i><br>Database Management
+                </h3>
+            </a>
+            <div class="skill-progress dbms-progress" style="inline-size: 70%;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I’ve worked on. Feel free to explore and get in touch if you have any
+            questions!</p>
+
+        <div class="project-cards">
+            <div class="project-card">
+                <img src="Image1.jpeg" alt="Restaurant Application" class="project-image">
+                <div class="project-overlay">
+                    <h3>Project 1: Restaurant Application</h3>
+                    <p>A restaurant app developed for Android, featuring ordering food, and cuisine selection.</p>
+                </div>
+            </div>
+
+
+
+            <div class="project-card">
+                <img src="Image2.jpeg" alt="Portfolio Website" class="project-image">
+                <div class="project-overlay">
+                    <h3>Project 2: Responsive Portfolio Website</h3>
+                    <p>This personal portfolio website, showcasing my skills and projects, built with HTML, CSS, and
+                        Bootstrap.</p>
+                </div>
+            </div>
+
+
+
+            <div class="project-card">
+                <img src="Image3.jpeg" alt="WhatsApp Clone" class="project-image">
+                <div class="project-overlay">
+                    <h3>Project 3: WhatsApp Clone</h3>
+                    <p>A full-stack WhatsApp clone web application with chatting, user authentication, and voice call
+                        features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you’d like to get in touch, please fill out the form below and I’ll get back to you as soon as possible.
+        </p>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" id="submit" onclick="submitdata()">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </div>
+
+
+
+   
+    
+
+    
+
+    <script>
+
+
+
+        
+        function submitdata() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+
+            JsonObj = {
+                "Name": "",
+                "Email": "",
+                "Message": ""
+            }
+
+            JsonObj.Name = name;
+            JsonObj.Email = email;
+            JsonObj.Message = message;
+
+            var string = JSON.stringify(JsonObj);
+            document.write(string);
+
+        }
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar-links');
+            menu.classList.toggle('active');
+        }
+        console.log($);
+        $(document).ready(function () {
+
+            // HOME SECTION ANIMATION
+            $(".info-text h2, .info-text p, .social-media a, .cta-btn").css("opacity", "0");
+
+
+            $(".info-text h2").delay(500).animate(
+                {
+                    opacity: 1, inset-block-start: "0px"
+                }, 1000);
+
+            $(".info-text p").delay(1000).animate(
+                {
+                    opacity: 1, inset-block-start: "0px"
+                }, 1000);
+            $(".social-media a").each(function (index) {
+                $(this).delay(1500 + (index * 300)).animate(
+                    {
+                        opacity: 1, inset-block-start: "0px"
+                    }, 800);
+            });
+            $(".cta-btn").delay(2500).animate(
+                {
+                    opacity: 1, inset-block-start: "0px"
+                }, 1000);
+
+
+            // ABOUT SECTION BOUNCE EFFECT
+            $("#about .card").css("opacity", "0").each(function (index) {
+                $(this).delay(300 + (index * 300)).animate({
+                    opacity: 1
+                }, 800, function () {
+                    $(this).effect("bounce", { times: 3 }, 800);
+                });
+            });
+
+            // SERVICES SECTION ANIMATION
+            $("#services .service-card").css("opacity", "0").each(function (index) {
+                $(this).delay(600 + (index * 300)).animate({
+                    opacity: 1, inset-block-end: "0px"
+                }, 1000);
+            });
+
+            $('.skill-item').hover(
+                function () {
+                    $(this).find('.skill-progress').each(function () {
+                        var skillWidth = $(this).data('skill-width'); // Get the width from data attribute
+                        $(this).animate({
+                            inline-size: skillWidth
+                        }, 1000); // Animate to the final width
+                    });
+                },
+                function () {
+                    // Optionally, reset the width to 0% when not hovering (for repeated effect)
+                    $(this).find('.skill-progress').animate({
+                        inline-size: "0%"
+                        }, 500);
+                }
+            );
+            $(".project-card").on("click", function () {
+                // Remove glow effect from all cards to ensure only one card has the effect
+                $(".project-card").removeClass("glow-effect");
+
+                // Add glow effect to the clicked card
+                $(this).addClass("glow-effect");
+            });
+            $("project-card").on("dbclick", function () {
+                $(".project-card").removeClass("glow-effect");
+            });
+            // CONTACT FORM ANIMATION
+            $(".contact-form").css("opacity", "0").delay(1500).animate({ opacity: 1 }, 1000);
+            $(document).ready(function () {
+                // Initially set the button to red (error state)
+                $('button[type="submit"]').addClass('error');
+
+                // Function to validate the form
+                function validateForm() {
+                    var isValid = true;
+
+                    // Check if all required fields are filled
+                    $('#name, #email, #message').each(function () {
+                        if ($(this).val() === '') {
+                            isValid = false;
+                        }
+                    });
+
+                    // If all fields are filled, change the button to green
+                    if (isValid) {
+                        $('button[type="submit"]').removeClass('error').addClass('success');
+                    } else {
+                        // If any field is empty, change the button to red
+                        $('button[type="submit"]').removeClass('success').addClass('error');
+                    }
+                }
+
+                // Run validation on keyup and change events
+                $('#name, #email, #message').on('keyup change', function () {
+                    validateForm();
+                });
+            });
+
+
+        });
+
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+        // Fetch JSON data
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Home Section
+                document.querySelector('.info-text h2').textContent = data.home.title;
+                document.querySelector('.info-text p').textContent = data.home.description;
+                
+                // About Section Cards
+                const aboutCards = document.querySelectorAll('#about .card');
+                data.about.cards.forEach((card, index) => {
+                    if (aboutCards[index]) {
+                        aboutCards[index].querySelector('h3').textContent = card.title;
+                        aboutCards[index].querySelector('p').textContent = card.description;
+                    }
+                });
+
+                // Services Section Cards
+                const serviceCards = document.querySelectorAll('#services .service-card');
+                data.services.cards.forEach((card, index) => {
+                    if (serviceCards[index]) {
+                        serviceCards[index].querySelector('h3').textContent = card.title;
+                        serviceCards[index].querySelector('p').textContent = card.description;
+                    }
+                });
+
+                // Skills Section
+                const skillsList = document.querySelectorAll('.skills-list .skill-item');
+                data.skills.items.forEach((skill, index) => {
+                    if (skillsList[index]) {
+                        skillsList[index].querySelector('h3').textContent = skill.name;
+                        skillsList[index].querySelector('p').textContent = skill.description;
+                        skillsList[index].querySelector('.skill-progress').style.width = skill.level;
+                    }
+                });
+
+                // Projects Section
+                const projectCards = document.querySelectorAll('.project-card');
+                data.projects.items.forEach((project, index) => {
+                    if (projectCards[index]) {
+                        projectCards[index].querySelector('img').src = project.image;
+                        projectCards[index].querySelector('h3').textContent = `Project ${index + 1}: ${project.title}`;
+                        projectCards[index].querySelector('p').textContent = project.description;
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching JSON data:', error));
+    });
+
+    </script>
+    
+
+</body>
+
+</html>
